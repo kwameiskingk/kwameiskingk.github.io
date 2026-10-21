@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kwame Mbugua — Vexon Systems</title>
+  <meta name="description" content="Kwame Mbugua builds systems that make businesses run smoother: booking, forms, CRM data and operations, built from the problem up. Founder of Vexon Systems, maker of Kronos.">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0b0c" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Kwame Mbugua — Vexon Systems">
+  <meta property="og:description" content="I build systems that make businesses run smoother. Booking, forms, CRM data and operations, built from the problem up.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script>
+    // Apply the saved theme before first paint to avoid a flash, and flag that JS runs.
+    try { var t = localStorage.getItem('theme'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+    document.documentElement.classList.add('js');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap">
+      <!-- Brand mark: inline copy of /brand/CHOSEN.svg (mark-05-vx), strokes use currentColor. -->
+      <a class="brand" id="brand-logo" href="#top" aria-label="Vexon Systems, home">
+        <svg class="mark" viewBox="0 0 128 128" aria-hidden="true" focusable="false" shape-rendering="geometricPrecision">
+          <defs><mask id="vx-mask"><rect width="128" height="128" fill="#fff"/><line x1="96" y1="22" x2="64" y2="106" stroke="#000" stroke-width="24"/></mask></defs>
+          <line x1="56" y1="22" x2="104" y2="106" stroke="currentColor" stroke-opacity="0.5" stroke-width="14" mask="url(#vx-mask)"/>
+          <polyline points="24,22 64,106 104,22" fill="none" stroke="currentColor" stroke-width="14" stroke-linejoin="miter" stroke-miterlimit="6"/>
+        </svg>
+        <span class="wordmark">Vexon Systems</span>
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#work">Work</a>
+        <a href="#stack">Stack</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="actions">
+        <button class="theme" type="button" id="themeToggle" aria-pressed="false" aria-label="Toggle dark mode">
+          <span class="sw" aria-hidden="true"></span><span class="theme-label">Theme</span>
+        </button>
+        <a class="btn primary small" href="mailto:kwamenova@gmail.com" data-note="Temporary. Later this opens a Kronos priority-email event instead of a mailto link.">Get in touch</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="top">
+      <div class="wrap">
+        <p class="eyebrow mono">Kwame Mbugua</p>
+        <h1 class="h1">Systems for the problems every business has.</h1>
+        <!-- Alternative hero lines (swap the <h1> text for one of these):
+             <h1 class="h1">I build systems that make businesses run smoother.</h1>
+             <h1 class="h1">I build the tools businesses actually use.</h1>
+        -->
+        <!-- Alternative sub-line: <p class="lede">Booking, forms, CRM data and operations, built from the problem up.</p> -->
+        <p class="lede">I start by understanding the problem from the ground up, then build the system around it.</p>
+      </div>
+    </section>
+
+    <!-- ================= WORK ================= -->
+    <section class="section" id="work" aria-labelledby="work-h">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="idx mono">01 · Work</span>
+          <h2 id="work-h">Five things I shipped.</h2>
+        </div>
+
+        <div class="cases">
+
+          <!-- 01 Vexon OS -->
+          <article class="case reveal" id="vexon-os">
+            <figure class="fig">
+              <img class="theme-light" src="img/vexon-os-forms-light.png" width="1204" height="900" alt="Vexon OS operations forms page in light mode: a start-of-day form with a mood selector and daily priority fields" loading="lazy">
+              <img class="theme-dark" src="img/vexon-os-forms-dark.png" width="1204" height="900" alt="Vexon OS operations forms page in dark mode: a start-of-day form with a mood selector and daily priority fields" loading="lazy">
+              <figcaption>Operations · daily forms, after the October redesign</figcaption>
+            </figure>
+            <div class="body">
+              <div class="meta mono"><span class="num">01</span><span>Platform</span><span>Oct 2025 – Oct 2026</span></div>
+              <h3>Vexon OS</h3>
+              <p class="sum">One platform for every role in a sales-outsourcing company, from the CEO to a trialist on their first day.</p>
+              <dl class="pbr">
+                <dt>Problem</dt><dd>Operations ran on Google Sheets, manual CRM exports and a stack of subscriptions. Managers found out who was behind at month end.</dd>
+                <dt>Built</dt><dd>Portals for 15 roles with row-level security on every table, live KPIs from the CRM, red/amber/green targets, hiring and onboarding pipelines, finance tools, scheduled jobs, and an admin console to configure it all without code. In October I audited real usage, cut 39 pages and redesigned the UI in two days.</dd>
+                <dt>Result</dt><dd>426 PRs in 15 weeks; 87 backend functions, 533 migrations, ~199 tables. A 28-client health spreadsheet retired; three critical security holes closed.</dd>
+              </dl>
+              <ul class="chips" aria-label="Stack">
+                <li>React</li><li>TypeScript</li><li>Supabase</li><li>PostgreSQL + RLS</li><li>Deno edge functions</li><li>pg_cron</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 02 Kronos -->
+          <article class="case reveal" id="kronos">
+            <figure class="fig">
+              <div class="ph" role="img" aria-label="Screenshot placeholder: Kronos public booking page">
+                <span class="ph-frame" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="mono">Figure to come</span>
+              </div>
+              <figcaption>Public booking flow · live slots from the host's real calendar</figcaption>
+            </figure>
+            <div class="body">
+              <div class="meta mono"><span class="num">02</span><span>Booking · Vexon product</span><span>Aug 2026 – now</span></div>
+              <h3>Kronos</h3>
+              <p class="sum">A Calendly replacement: public booking pages, round-robin hosts, live calendar checks, reminders, reschedule and cancel.</p>
+              <dl class="pbr">
+                <dt>Problem</dt><dd>21 Calendly seats, lead details copied by hand, clients on Microsoft 365 that could not be booked into, and reminders people did not get.</dd>
+                <dt>Built</dt><dd>Availability across Google Calendar and Microsoft 365 (multi-tenant Entra app, Graph free/busy), a database constraint that makes double-booking impossible, unique Meet or Teams links with an automatic repair sweep, email and SMS reminders, two-way SMS, callbacks within working days, CRM autofill from a pasted lead link, and a Google-verified OAuth app.</dd>
+                <dt>Result</dt><dd>Calendly cancelled. Two paying customers, three client calendars connected on Microsoft, about 70 PRs of iteration from real use.</dd>
+              </dl>
+              <ul class="chips" aria-label="Stack">
+                <li>Supabase</li><li>PostgreSQL</li><li>Google Calendar API</li><li>Microsoft Graph</li><li>Twilio</li><li>Resend</li><li>Close CRM</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 03 Enquire -->
+          <article class="case reveal" id="enquire">
+            <figure class="fig">
+              <img src="img/enquire-public-question.png" width="1200" height="640" alt="Enquire public form showing question 1 of 9, 'Are you a recruitment agency owner?', with keyboard-selectable A and B answers" loading="lazy">
+              <figcaption>Public form · one question per screen, scored on submit</figcaption>
+            </figure>
+            <div class="body">
+              <div class="meta mono"><span class="num">03</span><span>Forms + lead scoring</span><span>Sep 2026</span></div>
+              <h3>Enquire</h3>
+              <p class="sum">A Typeform and Jotform replacement: builder, public one-question-per-screen forms, server-side scoring, routing and one-click push to the CRM.</p>
+              <dl class="pbr">
+                <dt>Problem</dt><dd>Two form subscriptions, five minutes of copy-paste per job application, and website leads that could not be routed by answer.</dd>
+                <dt>Built</dt><dd>A form builder with versions and media; per-answer points, hard-fail rules and a pass mark scored on the server; routing to different confirmation pages; email and webhook sinks; and a push that maps 14 custom fields into Close CRM.</dd>
+                <dt>Result</dt><dd>Typeform and Jotform cancelled. 48 starts and 11 scored applications on day one. Proposal to live in 72 hours.</dd>
+              </dl>
+              <ul class="chips" aria-label="Stack">
+                <li>React</li><li>Supabase</li><li>PostgreSQL</li><li>Close CRM</li><li>Webhooks</li><li>Resend</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 04 CV agent -->
+          <article class="case reveal" id="cv-agent">
+            <figure class="fig">
+              <div class="ph" role="img" aria-label="Screenshot placeholder: run log and anonymised shortlist">
+                <span class="ph-frame" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="mono">Figure to come</span>
+              </div>
+              <figcaption>A run · scores, hard-gate failures and one-line reasons</figcaption>
+            </figure>
+            <div class="body">
+              <div class="meta mono"><span class="num">04</span><span>Hiring automation</span><span>Aug – Sep 2026</span></div>
+              <h3>CV-screening agent</h3>
+              <p class="sum">An agent that read every applicant's CV, applied hard rules and a rubric, and wrote a shortlist with a one-line reason per candidate.</p>
+              <dl class="pbr">
+                <dt>Problem</dt><dd>The hiring manager spent about three hours a day reading CVs. Good ones were rare (LinkedIn ~18% shortlist rate, Indeed ~2.4%) and screening was inconsistent.</dd>
+                <dt>Built</dt><dd>A written screening spec turned into a rubric with hard gates; a Python orchestrator running six parallel sessions on a cron, fed by a Google Apps Script webhook and writing results back through a platform endpoint; a holdout test against the manager's own decisions before trusting it.</dd>
+                <dt>Result</dt><dd>~1,400 CVs in a month at ~$0.20 each; 72 CVs in 18 minutes; no good CVs lost in the holdout. Credited with 60 hours a month saved.</dd>
+              </dl>
+              <ul class="chips" aria-label="Stack">
+                <li>Python</li><li>cron</li><li>Google Apps Script</li><li>Supabase</li><li>Rubric scoring</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 05 Client work (full width) -->
+          <article class="case wide reveal" id="client-work">
+            <figure class="fig">
+              <div class="ph" role="img" aria-label="Screenshot placeholder: pipeline board and booking page">
+                <span class="ph-frame" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="mono">Figure to come</span>
+              </div>
+              <figcaption>Business-development pipeline · the agency's booking page</figcaption>
+            </figure>
+            <div class="body">
+              <div class="meta mono"><span class="num">05</span><span>Client work</span><span>Jun – Oct 2026</span></div>
+              <h3>Booking + ATS platform for a UK recruitment agency</h3>
+              <p class="sum">A separate operations platform for a Built Environment recruitment agency: pipeline, delivery, candidates, roles, live activity numbers and booking with two-way SMS.</p>
+              <dl class="pbr">
+                <dt>Problem</dt><dd>Managers could not see real activity without exporting from the CRM, and candidate and client calls were booked over email ping-pong.</dd>
+                <dt>Built</dt><dd>A standalone platform with its own database and roles; CRM metrics with a five-minute cache (up to 6,000 calls a month) and phone enrichment; Kronos ported in with discovery and intro-call pages, callbacks, editable message templates and inbound texting.</dd>
+                <dt>Result</dt><dd>32 merged PRs, 41 migrations, in daily use. The agency is the second paying customer for Kronos.</dd>
+              </dl>
+              <ul class="chips" aria-label="Stack">
+                <li>React</li><li>TypeScript</li><li>Supabase</li><li>Close CRM</li><li>Twilio</li><li>Google Calendar API</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STATS ================= -->
+    <section class="stats reveal" id="stats" aria-label="Key numbers">
+      <div class="wrap">
+        <dl class="statrow">
+          <div><dd><span class="count" data-target="426">426</span></dd><dt>merged pull requests, 15 weeks</dt></div>
+          <div><dd><span class="count" data-target="87">87</span></dd><dt>backend functions in production</dt></div>
+          <div><dd><span class="count" data-target="533">533</span></dd><dt>database migrations</dt></div>
+          <div><dd><span class="count" data-target="6">6</span></dd><dt>paid tools replaced</dt></div>
+          <div><dd><span class="count" data-target="1400">1,400</span></dd><dt>CVs screened by an agent I built</dt></div>
+          <div><dd><span class="count" data-target="2">2</span></dd><dt>paying B2B customers</dt></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ================= STACK ================= -->
+    <section class="section" id="stack" aria-labelledby="stack-h">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="idx mono">02 · Stack</span>
+          <h2 id="stack-h">What the work is built with.</h2>
+        </div>
+        <dl class="stacklist reveal">
+          <div><dt>Front end</dt><dd>React · TypeScript · Vite · Tailwind · shadcn/ui · TanStack Query</dd></div>
+          <div><dt>Data and backend</dt><dd>Supabase · PostgreSQL + RLS · Deno edge functions · pg_cron · GitHub</dd></div>
+          <div><dt>Integrations</dt><dd>Close CRM · Google and Microsoft calendar APIs · Twilio · Resend · PandaDoc · n8n · Zapier</dd></div>
+          <div><dt>Build tooling</dt><dd>Lovable · Claude Code · ChatGPT · OpenAI API · Anthropic API · Anthropic Agent SDK · OpenAI Agents SDK</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section" id="about" aria-labelledby="about-h">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="idx mono">03 · About</span>
+          <h2 id="about-h">A bit about me.</h2>
+        </div>
+        <div class="about reveal">
+          <p>I'm Kwame, 27, from Johannesburg. I'm not a traditional developer, and I didn't take the usual road into this work.</p>
+          <p>After Parktown Boys' High School I studied International Relations at the University of Pécs in Hungary, took a systems-development course, and interned as a threat-response analyst at CrowdStrike, where I learned to read a live system under pressure and triage what matters first.</p>
+          <p>I then joined a UK sales company as an SDR and booked 30 meetings in my first month. The bigger shift came next: thirteen months building and maintaining the platform and tools the company relied on day to day, from the data model and integrations to incidents and training.</p>
+          <p>Today I run Vexon Systems, which provides Kronos, my booking system, to B2B customers. I'm fully open to remote product, systems, solutions and founding-team roles, and to collaboration. I speak English and fluent French, conversational Afrikaans, and basic Spanish and Swahili.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section contact" id="contact" aria-labelledby="contact-h">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="idx mono">04 · Contact</span>
+          <h2 id="contact-h">Get in touch.</h2>
+        </div>
+        <ul class="links reveal">
+          <li><span class="mono">Email</span><a href="mailto:kwamenova@gmail.com">kwamenova@gmail.com</a></li>
+          <li><span class="mono">LinkedIn</span><a href="https://linkedin.com/in/kwamembugua-642934351" rel="me noopener">linkedin.com/in/kwamembugua-642934351</a></li>
+          <li><span class="mono">GitHub</span><a href="https://github.com/kwameiskingk" rel="me noopener">github.com/kwameiskingk</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span>© <span id="year">2026</span> Vexon Systems · Kwame Mbugua</span>
+      <span class="mono">Static HTML + CSS · no tracking</span>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

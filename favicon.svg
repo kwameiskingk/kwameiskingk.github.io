@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" shape-rendering="geometricPrecision">
+<style>.vx{stroke:#0a0a0a}.vx2{stroke:#0a0a0a;opacity:.5}@media (prefers-color-scheme:dark){.vx{stroke:#f2f2f2}.vx2{stroke:#f2f2f2;opacity:.55}}</style>
+<defs><mask id="m"><rect width="128" height="128" fill="#fff"/><line x1="96" y1="22" x2="64" y2="106" stroke="#000" stroke-width="24"/></mask></defs>
+<line class="vx2" x1="56" y1="22" x2="104" y2="106" stroke-width="14" mask="url(#m)"/>
+<polyline class="vx" points="24,22 64,106 104,22" fill="none" stroke-width="14" stroke-linejoin="miter" stroke-miterlimit="6"/>
+</svg>
