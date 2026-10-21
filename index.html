@@ -18,7 +18,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,12 +26,17 @@
 
   <header class="topbar">
     <div class="wrap">
-      <!-- Brand mark: inline copy of /brand/CHOSEN.svg (mark-05-vx), strokes use currentColor. -->
+      <!-- Brand mark: the VX monogram (brand/mark-05-vx.svg). Gradient stops read CSS variables so the metal reads on both themes. -->
       <a class="brand" id="brand-logo" href="#top" aria-label="Vexon Systems, home">
         <svg class="mark" viewBox="0 0 128 128" aria-hidden="true" focusable="false" shape-rendering="geometricPrecision">
-          <defs><mask id="vx-mask"><rect width="128" height="128" fill="#fff"/><line x1="96" y1="22" x2="64" y2="106" stroke="#000" stroke-width="24"/></mask></defs>
-          <line x1="56" y1="22" x2="104" y2="106" stroke="currentColor" stroke-opacity="0.5" stroke-width="14" mask="url(#vx-mask)"/>
-          <polyline points="24,22 64,106 104,22" fill="none" stroke="currentColor" stroke-width="14" stroke-linejoin="miter" stroke-miterlimit="6"/>
+          <defs>
+            <linearGradient id="hdr-metal" x1="0" y1="0" x2="0.35" y2="1">
+              <stop offset="0" class="m1"/><stop offset="0.5" class="m2"/><stop offset="1" class="m3"/>
+            </linearGradient>
+            <mask id="hdr-cut"><rect width="128" height="128" fill="#fff"/><line x1="96" y1="22" x2="64" y2="106" stroke="#000" stroke-width="24"/></mask>
+          </defs>
+          <line class="back" x1="56" y1="22" x2="104" y2="106" stroke-width="14" mask="url(#hdr-cut)"/>
+          <polyline points="24,22 64,106 104,22" fill="none" stroke="url(#hdr-metal)" stroke-width="14" stroke-linejoin="miter" stroke-miterlimit="6"/>
         </svg>
         <span class="wordmark">Vexon Systems</span>
       </a>
@@ -45,24 +50,39 @@
         <button class="theme" type="button" id="themeToggle" aria-pressed="false" aria-label="Toggle dark mode">
           <span class="sw" aria-hidden="true"></span><span class="theme-label">Theme</span>
         </button>
-        <a class="btn primary small" href="mailto:kwamenova@gmail.com" data-note="Temporary. Later this opens a Kronos priority-email event instead of a mailto link.">Get in touch</a>
+        <a class="btn primary small magnet" href="mailto:kwamenova@gmail.com" data-note="Temporary. Later this opens a Kronos priority-email event instead of a mailto link."><span>Get in touch</span></a>
       </div>
     </div>
+    <div class="progress" id="progress" aria-hidden="true"></div>
   </header>
 
   <main id="main">
     <!-- ================= HERO ================= -->
     <section class="hero" id="top">
-      <div class="wrap">
-        <p class="eyebrow mono">Kwame Mbugua</p>
-        <h1 class="h1">Systems for the problems every business has.</h1>
-        <!-- Alternative hero lines (swap the <h1> text for one of these):
-             <h1 class="h1">I build systems that make businesses run smoother.</h1>
-             <h1 class="h1">I build the tools businesses actually use.</h1>
-        -->
-        <!-- Alternative sub-line: <p class="lede">Booking, forms, CRM data and operations, built from the problem up.</p> -->
-        <p class="lede">I start by understanding the problem from the ground up, then build the system around it.</p>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow mono">Kwame Mbugua</p>
+          <h1 class="h1">
+            <span class="line">Systems for</span>
+            <span class="line">the problems</span>
+            <span class="line">every business has.</span>
+          </h1>
+          <!-- Alternative hero lines (swap the <h1> text for one of these):
+               <h1 class="h1">I build systems that make businesses run smoother.</h1>
+               <h1 class="h1">I build the tools businesses actually use.</h1>
+          -->
+          <!-- Alternative sub-line: <p class="lede">Booking, forms, CRM data and operations, built from the problem up.</p> -->
+          <p class="lede">I start by understanding the problem from the ground up, then build the system around it.</p>
+        </div>
+        <!-- Hero object: the monogram as brushed metal. Two CSS-masked layers (back stroke, front V) so the V carries the gradient and the specular sweep. -->
+        <div class="hero-mark" id="heroMark" aria-hidden="true">
+          <div class="vx">
+            <div class="vx-back"></div>
+            <div class="vx-front"></div>
+          </div>
+        </div>
       </div>
+      <div class="hero-rule" aria-hidden="true"></div>
     </section>
 
     <!-- ================= WORK ================= -->
@@ -72,14 +92,24 @@
           <span class="idx mono">01 · Work</span>
           <h2 id="work-h">Five things I shipped.</h2>
         </div>
+      </div>
 
-        <div class="cases">
+      <div class="cases">
 
-          <!-- 01 Vexon OS -->
-          <article class="case reveal" id="vexon-os">
+        <!-- 01 Vexon OS -->
+        <article class="case reveal" id="vexon-os">
+          <div class="wrap case-grid">
+            <aside class="case-index">
+              <span class="num">01</span>
+              <span class="mono cat">Platform</span>
+              <span class="mono when">Oct 2025 – Oct 2026</span>
+            </aside>
             <figure class="fig">
-              <img class="theme-light" src="img/vexon-os-forms-light.png" width="1204" height="900" alt="Vexon OS operations forms page in light mode: a start-of-day form with a mood selector and daily priority fields" loading="lazy">
-              <img class="theme-dark" src="img/vexon-os-forms-dark.png" width="1204" height="900" alt="Vexon OS operations forms page in dark mode: a start-of-day form with a mood selector and daily priority fields" loading="lazy">
+              <div class="frame">
+                <span class="frame-bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                <img class="theme-light" src="img/vexon-os-forms-light.png" width="1204" height="900" alt="Vexon OS operations forms page in light mode: a start-of-day form with a mood selector and daily priority fields" loading="lazy">
+                <img class="theme-dark" src="img/vexon-os-forms-dark.png" width="1204" height="900" alt="Vexon OS operations forms page in dark mode: a start-of-day form with a mood selector and daily priority fields" loading="lazy">
+              </div>
               <figcaption>Operations · daily forms, after the October redesign</figcaption>
             </figure>
             <div class="body">
@@ -95,14 +125,24 @@
                 <li>React</li><li>TypeScript</li><li>Supabase</li><li>PostgreSQL + RLS</li><li>Deno edge functions</li><li>pg_cron</li>
               </ul>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <!-- 02 Kronos -->
-          <article class="case reveal" id="kronos">
+        <!-- 02 Kronos -->
+        <article class="case flip reveal" id="kronos">
+          <div class="wrap case-grid">
+            <aside class="case-index">
+              <span class="num">02</span>
+              <span class="mono cat">Booking · Vexon product</span>
+              <span class="mono when">Aug 2026 – now</span>
+            </aside>
             <figure class="fig">
-              <div class="ph" role="img" aria-label="Screenshot placeholder: Kronos public booking page">
-                <span class="ph-frame" aria-hidden="true"><i></i><i></i><i></i></span>
-                <span class="mono">Figure to come</span>
+              <div class="frame">
+                <span class="frame-bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                <div class="ph ph-a" role="img" aria-label="Screenshot placeholder: Kronos public booking page">
+                  <span class="ph-art" aria-hidden="true"><b></b><b></b><b></b></span>
+                  <span class="mono ph-label">Figure to come</span>
+                </div>
               </div>
               <figcaption>Public booking flow · live slots from the host's real calendar</figcaption>
             </figure>
@@ -119,12 +159,22 @@
                 <li>Supabase</li><li>PostgreSQL</li><li>Google Calendar API</li><li>Microsoft Graph</li><li>Twilio</li><li>Resend</li><li>Close CRM</li>
               </ul>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <!-- 03 Enquire -->
-          <article class="case reveal" id="enquire">
+        <!-- 03 Enquire -->
+        <article class="case reveal" id="enquire">
+          <div class="wrap case-grid">
+            <aside class="case-index">
+              <span class="num">03</span>
+              <span class="mono cat">Forms + lead scoring</span>
+              <span class="mono when">Sep 2026</span>
+            </aside>
             <figure class="fig">
-              <img src="img/enquire-public-question.png" width="1200" height="640" alt="Enquire public form showing question 1 of 9, 'Are you a recruitment agency owner?', with keyboard-selectable A and B answers" loading="lazy">
+              <div class="frame">
+                <span class="frame-bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                <img src="img/enquire-public-question.png" width="1200" height="640" alt="Enquire public form showing question 1 of 9, 'Are you a recruitment agency owner?', with keyboard-selectable A and B answers" loading="lazy">
+              </div>
               <figcaption>Public form · one question per screen, scored on submit</figcaption>
             </figure>
             <div class="body">
@@ -140,14 +190,24 @@
                 <li>React</li><li>Supabase</li><li>PostgreSQL</li><li>Close CRM</li><li>Webhooks</li><li>Resend</li>
               </ul>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <!-- 04 CV agent -->
-          <article class="case reveal" id="cv-agent">
+        <!-- 04 CV agent -->
+        <article class="case flip reveal" id="cv-agent">
+          <div class="wrap case-grid">
+            <aside class="case-index">
+              <span class="num">04</span>
+              <span class="mono cat">Hiring automation</span>
+              <span class="mono when">Aug – Sep 2026</span>
+            </aside>
             <figure class="fig">
-              <div class="ph" role="img" aria-label="Screenshot placeholder: run log and anonymised shortlist">
-                <span class="ph-frame" aria-hidden="true"><i></i><i></i><i></i></span>
-                <span class="mono">Figure to come</span>
+              <div class="frame">
+                <span class="frame-bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                <div class="ph ph-b" role="img" aria-label="Screenshot placeholder: run log and anonymised shortlist">
+                  <span class="ph-art" aria-hidden="true"><b></b><b></b><b></b></span>
+                  <span class="mono ph-label">Figure to come</span>
+                </div>
               </div>
               <figcaption>A run · scores, hard-gate failures and one-line reasons</figcaption>
             </figure>
@@ -164,14 +224,24 @@
                 <li>Python</li><li>cron</li><li>Google Apps Script</li><li>Supabase</li><li>Rubric scoring</li>
               </ul>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <!-- 05 Client work (full width) -->
-          <article class="case wide reveal" id="client-work">
+        <!-- 05 Client work -->
+        <article class="case reveal" id="client-work">
+          <div class="wrap case-grid">
+            <aside class="case-index">
+              <span class="num">05</span>
+              <span class="mono cat">Client work</span>
+              <span class="mono when">Jun – Oct 2026</span>
+            </aside>
             <figure class="fig">
-              <div class="ph" role="img" aria-label="Screenshot placeholder: pipeline board and booking page">
-                <span class="ph-frame" aria-hidden="true"><i></i><i></i><i></i></span>
-                <span class="mono">Figure to come</span>
+              <div class="frame">
+                <span class="frame-bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                <div class="ph ph-c" role="img" aria-label="Screenshot placeholder: pipeline board and booking page">
+                  <span class="ph-art" aria-hidden="true"><b></b><b></b><b></b></span>
+                  <span class="mono ph-label">Figure to come</span>
+                </div>
               </div>
               <figcaption>Business-development pipeline · the agency's booking page</figcaption>
             </figure>
@@ -188,9 +258,9 @@
                 <li>React</li><li>TypeScript</li><li>Supabase</li><li>Close CRM</li><li>Twilio</li><li>Google Calendar API</li>
               </ul>
             </div>
-          </article>
+          </div>
+        </article>
 
-        </div>
       </div>
     </section>
 
@@ -216,10 +286,10 @@
           <h2 id="stack-h">What the work is built with.</h2>
         </div>
         <dl class="stacklist reveal">
-          <div><dt>Front end</dt><dd>React · TypeScript · Vite · Tailwind · shadcn/ui · TanStack Query</dd></div>
-          <div><dt>Data and backend</dt><dd>Supabase · PostgreSQL + RLS · Deno edge functions · pg_cron · GitHub</dd></div>
-          <div><dt>Integrations</dt><dd>Close CRM · Google and Microsoft calendar APIs · Twilio · Resend · PandaDoc · n8n · Zapier</dd></div>
-          <div><dt>Build tooling</dt><dd>Lovable · Claude Code · ChatGPT · OpenAI API · Anthropic API · Anthropic Agent SDK · OpenAI Agents SDK</dd></div>
+          <div><dt class="mono">Front end</dt><dd><ul><li>React</li><li>TypeScript</li><li>Vite</li><li>Tailwind</li><li>shadcn/ui</li><li>TanStack Query</li></ul></dd></div>
+          <div><dt class="mono">Data and backend</dt><dd><ul><li>Supabase</li><li>PostgreSQL + RLS</li><li>Deno edge functions</li><li>pg_cron</li><li>GitHub</li></ul></dd></div>
+          <div><dt class="mono">Integrations</dt><dd><ul><li>Close CRM</li><li>Google and Microsoft calendar APIs</li><li>Twilio</li><li>Resend</li><li>PandaDoc</li><li>n8n</li><li>Zapier</li></ul></dd></div>
+          <div><dt class="mono">Build tooling</dt><dd><ul><li>Lovable</li><li>Claude Code</li><li>ChatGPT</li><li>OpenAI API</li><li>Anthropic API</li><li>Anthropic Agent SDK</li><li>OpenAI Agents SDK</li></ul></dd></div>
         </dl>
       </div>
     </section>
@@ -232,10 +302,15 @@
           <h2 id="about-h">A bit about me.</h2>
         </div>
         <div class="about reveal">
-          <p>I'm Kwame, 27, from Johannesburg. I'm not a traditional developer, and I didn't take the usual road into this work.</p>
-          <p>After Parktown Boys' High School I studied International Relations at the University of Pécs in Hungary, took a systems-development course, and interned as a threat-response analyst at CrowdStrike, where I learned to read a live system under pressure and triage what matters first.</p>
-          <p>I then joined a UK sales company as an SDR and booked 30 meetings in my first month. The bigger shift came next: thirteen months building and maintaining the platform and tools the company relied on day to day, from the data model and integrations to incidents and training.</p>
-          <p>Today I run Vexon Systems, which provides Kronos, my booking system, to B2B customers. I'm fully open to remote product, systems, solutions and founding-team roles, and to collaboration. I speak English and fluent French, conversational Afrikaans, and basic Spanish and Swahili.</p>
+          <div class="portrait">
+            <img src="img/kwame.jpg" width="675" height="900" alt="Kwame Mbugua, arms folded, in a garden" loading="lazy">
+          </div>
+          <div class="about-text">
+            <p class="pull">I'm Kwame, 27, from Johannesburg. I'm not a traditional developer, and I didn't take the usual road into this work.</p>
+            <p>After Parktown Boys' High School I studied International Relations at the University of Pécs in Hungary, took a systems-development course, and interned as a threat-response analyst at CrowdStrike, where I learned to read a live system under pressure and triage what matters first.</p>
+            <p>I then joined a UK sales company as an SDR and booked 30 meetings in my first month. The bigger shift came next: thirteen months building and maintaining the platform and tools the company relied on day to day, from the data model and integrations to incidents and training.</p>
+            <p>Today I run Vexon Systems, which provides Kronos, my booking system, to B2B customers. I'm fully open to remote product, systems, solutions and founding-team roles, and to collaboration. I speak English and fluent French, conversational Afrikaans, and basic Spanish and Swahili.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -248,9 +323,9 @@
           <h2 id="contact-h">Get in touch.</h2>
         </div>
         <ul class="links reveal">
-          <li><span class="mono">Email</span><a href="mailto:kwamenova@gmail.com">kwamenova@gmail.com</a></li>
-          <li><span class="mono">LinkedIn</span><a href="https://linkedin.com/in/kwamembugua-642934351" rel="me noopener">linkedin.com/in/kwamembugua-642934351</a></li>
-          <li><span class="mono">GitHub</span><a href="https://github.com/kwameiskingk" rel="me noopener">github.com/kwameiskingk</a></li>
+          <li><span class="mono">Email</span><a href="mailto:kwamenova@gmail.com"><span>kwamenova@gmail.com</span><i class="arrow" aria-hidden="true"></i></a></li>
+          <li><span class="mono">LinkedIn</span><a href="https://linkedin.com/in/kwamembugua-642934351" rel="me noopener"><span>linkedin.com/in/kwamembugua-642934351</span><i class="arrow" aria-hidden="true"></i></a></li>
+          <li><span class="mono">GitHub</span><a href="https://github.com/kwameiskingk" rel="me noopener"><span>github.com/kwameiskingk</span><i class="arrow" aria-hidden="true"></i></a></li>
         </ul>
       </div>
     </section>
